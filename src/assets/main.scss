@@ -1,0 +1,162 @@
+body {
+  font-family: "Arial", serif;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected_currencies {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .selected {
+    padding: 10px 0;
+    position: relative;
+    width: 30%;
+    display: none;
+    background-color: #e8e6e6;
+    border: 1px solid #e8e6e6;
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 22px;
+
+    @media screen and (max-width: 768px) {
+      width: 28%;
+      font-size: 18px;
+    }
+
+    &.active {
+      display: inline-block;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    & .remove {
+      top: -10px;
+      right: -10px;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      display: block;
+      background-color: black;
+      border: 5px solid white;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 22px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.currency_list_wrapp {
+  margin: 0 auto;
+  padding: 20px 20px 0 20px;
+  width: 500px;
+  height: auto;
+  min-height: 200px;
+  border: 1px solid #525252;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px -3px rgba(0,0,0,0.75);
+}
+
+.availaible_currencies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.currency {
+  margin-bottom: 20px;
+  padding: 5px 0;
+  width: 30%;
+  position: relative;
+  color: #0d018a;
+  background-color: #e8e6e6;
+  border: 1px solid #8a8a8a;
+  transition: background-color 150ms;
+  font-size: 28px;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  &:hover {
+    background-color: #919191;
+    cursor: pointer;
+  }
+
+  &.active {
+    background-color: #fff;
+  }
+
+  & input {
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 9;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:checked {
+      & ~ .checkmark {
+        background-color: #fff;
+      }
+
+      & ~ .checkmark:after {
+        display: block;
+      }
+    }
+  }
+
+  & .checkmark {
+    top: 7px;
+    left: 10px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background-color: #e8e6e6;
+    border: 1px solid #8a8a8a;
+    border-radius: 5px;
+
+    @media screen and (max-width: 768px) {
+      top: 9px;
+      height: 15px;
+      width: 15px;
+    }
+
+    &:after {
+      content: 'X';
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: none;
+      font-size: 22px;
+      font-weight: bold;
+      color: red;
+
+      @media screen and (max-width: 768px) {
+        font-size: 15px;
+      }
+    }
+  }
+}

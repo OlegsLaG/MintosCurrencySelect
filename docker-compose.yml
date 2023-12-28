@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  web:
+    container_name: "mintos-currency-select"
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    ports:
+      - "8000:80"
