@@ -47,13 +47,17 @@ body {
       height: 30px;
       position: absolute;
       display: block;
-      background-color: black;
-      border: 5px solid white;
+      background-color: #000;
+      border: 5px solid #fff;
       border-radius: 50%;
       color: #fff;
       font-size: 22px;
+      transition: all 150ms;
 
       &:hover {
+        background-color: #fff;
+        border: 5px solid #000;
+        color: #000;
         cursor: pointer;
       }
     }
