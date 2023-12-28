@@ -6,5 +6,10 @@ services:
     build:
       context: .
       dockerfile: app.Dockerfile
+    volumes:
+      - type: bind
+        source: ./
+        target: /web/app
     ports:
       - "8000:80"
+    tty: true
