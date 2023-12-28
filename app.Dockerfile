@@ -13,7 +13,7 @@ RUN npm install
 
 EXPOSE 8000
 
-# start the app
+# run tests
 CMD ["npm", "test"]
 
 # start the app
