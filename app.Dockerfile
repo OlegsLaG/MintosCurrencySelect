@@ -1,4 +1,5 @@
-FROM node:20.7.0
+FROM node:20.9.0
+EXPOSE 8000
 
 # create destination directory
 RUN mkdir -p /web/app
@@ -10,11 +11,6 @@ COPY package-lock.json /web/app/package-lock.json
 COPY . /web/app/
 
 RUN npm install
-
-EXPOSE 8000
-
-# run tests
-CMD ["npm", "test"]
 
 # start the app
 CMD ["npm", "start"]
